@@ -1,14 +1,16 @@
 package com.caraacara.factory;
 
-import com.caraacara.model.Character;
-
-/**
- * Factory responsável por criar os personagens do jogo.
- */
 public class CharacterFactory {
-    
-    // TODO: Implementar método para criar personagens
-    // TODO: Criar personagens (robôs e seres humanos) com suas características
-    
-}
 
+    public static GameCharacter createCharacter(CharacterType type) {
+
+        return new GameCharacter(
+                type.name(),
+                type.getSexo(),
+                type.getCor(),
+                type.getOlho(),
+                type.getCabelo(),
+                type.getDetalhe()
+        );
+    }
+}
