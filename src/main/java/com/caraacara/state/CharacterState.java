@@ -1,14 +1,11 @@
 package com.caraacara.state;
 
-import com.caraacara.model.Character;
+import com.caraacara.model.GameCharacter;
 
-/**
- * Interface base para os estados do personagem.
- */
 public interface CharacterState {
-    
-    // TODO: Definir métodos comuns para os estados
-    // TODO: Métodos para verificar se personagem está ativo ou removido
-    
-}
+    void activate(GameCharacter character);
+    void remove(GameCharacter character);
 
+    boolean isActive();
+    boolean isRemoved();
+}

@@ -1,15 +1,23 @@
 package com.caraacara.state;
 
-import com.caraacara.model.Character;
+import com.caraacara.model.GameCharacter;
 
-/**
- * Estado que representa um personagem removido do jogo.
- * Usado para "apagar" personagens que não correspondem às características escolhidas.
- */
 public class RemovedState implements CharacterState {
-    
-    // TODO: Implementar estado removido do personagem
-    // TODO: Personagem foi eliminado baseado nas características escolhidas
-    
-}
 
+    @Override
+    public void activate(GameCharacter character) {
+        character.setState(new ActiveState());
+        System.out.println(character.getNome() + " foi reativado no jogo.");
+    }
+
+    @Override
+    public void remove(GameCharacter character) {
+        System.out.println(character.getNome() + " já está removido.");
+    }
+
+    @Override
+    public boolean isActive() { return false; }
+
+    @Override
+    public boolean isRemoved() { return true; }
+}

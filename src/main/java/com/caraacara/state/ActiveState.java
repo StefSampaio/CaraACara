@@ -1,14 +1,23 @@
 package com.caraacara.state;
 
-import com.caraacara.model.Character;
+import com.caraacara.model.GameCharacter;
 
-/**
- * Estado que representa um personagem ativo no jogo.
- */
 public class ActiveState implements CharacterState {
-    
-    // TODO: Implementar estado ativo do personagem
-    // TODO: Personagem está disponível para ser escolhido
-    
-}
 
+    @Override
+    public void activate(GameCharacter character) {
+        System.out.println(character.getNome() + " já está ativo.");
+    }
+
+    @Override
+    public void remove(GameCharacter character) {
+        character.setState(new RemovedState());
+        System.out.println(character.getNome() + " foi removido do jogo.");
+    }
+
+    @Override
+    public boolean isActive() { return true; }
+
+    @Override
+    public boolean isRemoved() { return false; }
+}
