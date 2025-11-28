@@ -1,12 +1,10 @@
 package com.caraacara;
 
-import com.caraacara.screens.MenuScreen;
-
+import com.caraacara.controller.MenuController;
 
 public class Main {
-    
     public static void main(String[] args) {
-        MenuScreen menuScreen = new MenuScreen();
-        menuScreen.displayMenu();
+        MenuController menuController = new MenuController();
+        menuController.start();
     }
 }

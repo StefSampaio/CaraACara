@@ -1,17 +1,15 @@
 package com.caraacara.model;
 
-import com.caraacara.state.CharacterState;
-import com.caraacara.state.ActiveState;
+import com.caraacara.patterns.state.ActiveState;
+import com.caraacara.patterns.state.CharacterState;
 
 public class GameCharacter {
-
     private String nome;
     private String sexo;
     private String cor;
     private String olho;
     private String cabelo;
     private String detalhe;
-
     private CharacterState state;
 
     public GameCharacter(String nome, String sexo, String cor, String olho, String cabelo, String detalhe) {
@@ -21,18 +19,18 @@ public class GameCharacter {
         this.olho = olho;
         this.cabelo = cabelo;
         this.detalhe = detalhe;
-        this.state = new ActiveState(); // estado inicial
+        this.state = new ActiveState();
     }
 
     public void activate() { state.activate(this); }
     public void remove()   { state.remove(this); }
-
     public boolean isActive()  { return state.isActive(); }
     public boolean isRemoved() { return state.isRemoved(); }
 
     public void setState(CharacterState state) { this.state = state; }
     public CharacterState getState() { return this.state; }
 
+    // Getters
     public String getNome() { return nome; }
     public String getSexo() { return sexo; }
     public String getCor() { return cor; }

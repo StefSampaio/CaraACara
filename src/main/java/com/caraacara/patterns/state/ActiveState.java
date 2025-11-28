@@ -1,4 +1,4 @@
-package com.caraacara.state;
+package com.caraacara.patterns.state;
 
 import com.caraacara.model.GameCharacter;
 
